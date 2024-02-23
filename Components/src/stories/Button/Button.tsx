@@ -1,47 +1,23 @@
-import './button.css';
+import type {ButtonProps} from "./Button.types.ts"
+import styled from 'styled-components';
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
+const Button = styled.button`
+  background-color: #222222;
+  width: 8em;
+  color: white;
+  padding: 1em;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin-left: 1em;
+`
+export default function StyledButton({backgroundColor, label}: ButtonProps){
+  return(
+    <>
+    <Button
+    style={{backgroundColor : backgroundColor}}>
+    {label}
+    </Button>
+    </>
+  )
 }
 
-/**
- * Primary UI component for user interaction
- */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-};
