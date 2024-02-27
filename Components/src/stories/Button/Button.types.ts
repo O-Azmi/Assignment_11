@@ -1,15 +1,26 @@
 import "react"
 export type ButtonProps = {
     /**
-     * Is this the principal call to action on the page?
-     */
-    primary?: boolean;
-    /**
      * What background color to use
      */
-    backgroundColor?: string;
+    backgroundColor?: string | undefined;
     /**
      * Button contents
      */
-    label: string;
+    label: string; 
+
+    /**
+     * What size is your button
+     */
+    size?: string;
+
+    /**
+     * What the button looks like disabled
+     */
+    disabled?: boolean;
+    
+      /**
+    * Optional click handler
+    */
+      onClick?: () => void;
   }

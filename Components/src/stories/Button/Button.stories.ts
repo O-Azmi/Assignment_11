@@ -1,30 +1,70 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import StyledButton from './Button.tsx';
+import StyledButton from './Button.tsx'; 
 
-// More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
-const meta = {
+const meta: Meta = {
   title: 'Example/Button',
   component: StyledButton,
   parameters: {
-    // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
   },
-  // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
-  // More on argTypes: https://storybook.js.org/docs/api/argtypes
   argTypes: {
     backgroundColor: { control: 'color' },
+    size: { control: { type: 'radio'},
+    options: ['small', 'medium', 'large'] } 
   },
-} satisfies Meta<typeof StyledButton>;
+  
+};
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    primary: true,
-    label: 'Nothing',
+    label: 'Submit',
+    backgroundColor : '#3a4556', 
+    size: 'medium'
+  },
+};
+export const Secondary: Story = {
+  args: {
+    label: 'Submit',
+    backgroundColor : '#cccccc', 
+    size: 'medium'
+  },
+};
+
+export const Small: Story = { 
+  args: {
+    label: 'Small', 
+    backgroundColor : '#3a4556', 
+    size: 'small',
+    color: "black"
+  },
+};
+export const Medium: Story = { 
+  args: {
+    label: 'Medium', 
+    backgroundColor : '#3a4556', 
+    size: 'medium' 
+  },
+};
+
+export const Large: Story = { 
+  args: {
+    label: 'Large', 
+    backgroundColor : '#3a4556', 
+    size: 'large' 
+  },
+};
+
+export const Disabled: Story = { 
+  args: {
+    label: 'Disabled', 
+    backgroundColor : '#3a4556', 
+    size: 'medium',
+    disabled: true 
   },
 };

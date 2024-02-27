@@ -1,23 +1,52 @@
-import type {ButtonProps} from "./Button.types.ts"
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import type { ButtonProps } from "./Button.types.ts";
 
-const Button = styled.button`
-  background-color: #222222;
+const StyledButton = styled.button<{ size?: string, disabled?: boolean }>`
   width: 8em;
   color: white;
   padding: 1em;
   border: 1px solid white;
   border-radius: 20px;
   margin-left: 1em;
-`
-export default function StyledButton({backgroundColor, label}: ButtonProps){
-  return(
-    <>
-    <Button
-    style={{backgroundColor : backgroundColor}}>
-    {label}
-    </Button>
-    </>
-  )
-}
+  font-weight: 500;
 
+  
+  ${({ size }) =>
+    size === 'small' &&
+    css`
+      width: 6em;
+    `};
+
+  ${({ size }) =>
+    size === 'medium' &&
+    css`
+      width: 8em;
+    `};
+
+  ${({ size }) =>
+    size === 'large' &&
+    css`
+      width: 10em;
+    `};
+
+
+  ${props =>
+    props.disabled &&
+    css`
+      opacity: 0.5;
+      cursor: not-allowed;
+    `};
+`;
+
+const Button = ({ backgroundColor, label, size, disabled, onClick }: ButtonProps) => (
+  <StyledButton
+    size={size}
+    style={{ backgroundColor: backgroundColor }}
+    disabled={disabled}
+    onClick={onClick} 
+  >
+    {label}
+  </StyledButton>
+);
+
+export default Button;
