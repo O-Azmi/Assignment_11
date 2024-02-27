@@ -9,7 +9,6 @@ const StyledButton = styled.button<{ size?: string, disabled?: boolean }>`
   border-radius: 20px;
   margin-left: 1em;
   font-weight: 500;
-
   
   ${({ size }) =>
     size === 'small' &&
@@ -29,7 +28,6 @@ const StyledButton = styled.button<{ size?: string, disabled?: boolean }>`
       width: 10em;
     `};
 
-
   ${props =>
     props.disabled &&
     css`
@@ -38,15 +36,16 @@ const StyledButton = styled.button<{ size?: string, disabled?: boolean }>`
     `};
 `;
 
-const Button = ({ backgroundColor, label, size, disabled, onClick }: ButtonProps) => (
-  <StyledButton
-    size={size}
-    style={{ backgroundColor: backgroundColor }}
-    disabled={disabled}
-    onClick={onClick} 
-  >
-    {label}
-  </StyledButton>
-);
+export default function Button({ backgroundColor, label, size, disabled, onClick }: ButtonProps) {
+  return (
+    <StyledButton
+      size={size}
+      style={{ backgroundColor: backgroundColor }}
+      disabled={disabled}
+      onClick={onClick}
+    >
+      {label}
+    </StyledButton>
+  );
+}
 
-export default Button;

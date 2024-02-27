@@ -25,14 +25,17 @@ export const Primary: Story = {
   args: {
     label: 'Submit',
     backgroundColor : '#3a4556', 
-    size: 'medium'
+    size: 'medium',
+    disabled: false 
   },
 };
 export const Secondary: Story = {
   args: {
     label: 'Submit',
     backgroundColor : '#cccccc', 
-    size: 'medium'
+    size: 'medium',
+    disabled: false 
+
   },
 };
 
@@ -41,14 +44,15 @@ export const Small: Story = {
     label: 'Small', 
     backgroundColor : '#3a4556', 
     size: 'small',
-    color: "black"
+    disabled: false 
   },
 };
 export const Medium: Story = { 
   args: {
     label: 'Medium', 
     backgroundColor : '#3a4556', 
-    size: 'medium' 
+    size: 'medium',
+    disabled: false 
   },
 };
 
@@ -56,7 +60,9 @@ export const Large: Story = {
   args: {
     label: 'Large', 
     backgroundColor : '#3a4556', 
-    size: 'large' 
+    size: 'large',
+    disabled: false 
+
   },
 };
 

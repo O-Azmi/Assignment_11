@@ -19,8 +19,8 @@ export type ButtonProps = {
      */
     disabled?: boolean;
     
-      /**
+    /**
     * Optional click handler
     */
-      onClick?: () => void;
+    onClick?: () => void;
   }
