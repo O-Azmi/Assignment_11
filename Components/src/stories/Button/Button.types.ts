@@ -20,6 +20,10 @@ export type ButtonProps = {
     disabled?: boolean;
     
     /**
+     * What secondary button looks like
+     */
+    secondary?: boolean;
+    /**
     * Optional click handler
     */
     onClick?: () => void;

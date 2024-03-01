@@ -13,11 +13,11 @@ export type TextProps = {
      */
     disabled?: boolean;
     /**
-     * What the text looks like bold
+     * What the text looks like bold?
      */
     bold: string;
     /**
-     * Underline text
+     * Underline text?
      */
     underline?: boolean;
   }

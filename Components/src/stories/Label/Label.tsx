@@ -5,7 +5,7 @@ const StyledLabel = styled.label<{disabled?: boolean, font?: string, isValid?: b
  font-family: 'Times New Roman', Times, serif;
  padding-bottom: 0.2em;
  color: #3a4556;
-
+ outline: none;
  ${({ font }) =>
     font === 'default' &&
     css`
@@ -40,24 +40,28 @@ const Container = styled.div`
     display:flex;
     flex-direction: column;
 `
-const InputField = styled.input<{isValid?: boolean }> `
+const InputField = styled.input<{ isValid?: boolean }> `
     border-radius: 5px;
     padding: .8em;
     border: 2px solid #3a4556;
 
+   
     ${props =>
     props.disabled &&
     css`
       opacity: 0.5;
       cursor: not-allowed;
     `};
+
     ${props =>
     props.isValid &&
     css`
       border: 2px solid red;
+      &:focus {
+        outline: none; 
+    }
     `};
-`
-
+`;
 export default function Label({ label, disabled, font, isValid }: LabelProps) {
     return (
         <Container>

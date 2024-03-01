@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import StyledLabel from './Label.tsx'; 
+import Label from './Label.tsx'; 
 
 const meta: Meta = {
   title: 'Example/Label',
-  component: StyledLabel,
+  component: Label,
   parameters: {
     layout: 'centered',
   },

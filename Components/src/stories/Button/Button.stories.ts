@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import StyledButton from './Button.tsx'; 
+import Button from './Button.tsx'; 
 
 const meta: Meta = {
   title: 'Example/Button',
-  component: StyledButton,
+  component: Button,
   parameters: {
     layout: 'centered',
   },
@@ -26,7 +26,8 @@ export const Primary: Story = {
     label: 'Submit',
     backgroundColor : '#3a4556', 
     size: 'medium',
-    disabled: false 
+    disabled: false,
+    secondary: false
   },
 };
 export const Secondary: Story = {
@@ -34,35 +35,8 @@ export const Secondary: Story = {
     label: 'Submit',
     backgroundColor : '#cccccc', 
     size: 'medium',
-    disabled: false 
-
-  },
-};
-
-export const Small: Story = { 
-  args: {
-    label: 'Small', 
-    backgroundColor : '#3a4556', 
-    size: 'small',
-    disabled: false 
-  },
-};
-export const Medium: Story = { 
-  args: {
-    label: 'Medium', 
-    backgroundColor : '#3a4556', 
-    size: 'medium',
-    disabled: false 
-  },
-};
-
-export const Large: Story = { 
-  args: {
-    label: 'Large', 
-    backgroundColor : '#3a4556', 
-    size: 'large',
-    disabled: false 
-
+    disabled: false,
+    secondary: true
   },
 };
 
@@ -71,6 +45,7 @@ export const Disabled: Story = {
     label: 'Disabled', 
     backgroundColor : '#3a4556', 
     size: 'medium',
-    disabled: true 
+    disabled: true,
+    secondary: false
   },
 };

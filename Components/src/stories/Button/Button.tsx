@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import type { ButtonProps } from "./Button.types.ts";
 
-const StyledButton = styled.button<{ size?: string, disabled?: boolean }>`
+const StyledButton = styled.button<{ size?: string, disabled?: boolean, secondary?: boolean }>`
   width: 8em;
   color: white;
   padding: 1em;
@@ -34,15 +34,22 @@ const StyledButton = styled.button<{ size?: string, disabled?: boolean }>`
       opacity: 0.5;
       cursor: not-allowed;
     `};
+
+    ${props =>
+    props.secondary &&
+    css`
+      color: black;
+    `};
 `;
 
-export default function Button({ backgroundColor, label, size, disabled, onClick }: ButtonProps) {
+export default function Button({ backgroundColor, label, size, disabled, onClick, secondary }: ButtonProps) {
   return (
     <StyledButton
       size={size}
       style={{ backgroundColor: backgroundColor }}
       disabled={disabled}
       onClick={onClick}
+      secondary={secondary}
     >
       {label}
     </StyledButton>

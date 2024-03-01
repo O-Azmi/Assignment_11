@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import StyledText from './Text.tsx'; 
+import Text from './Text.tsx'; 
 
 const meta: Meta = {
   title: 'Example/Text',
-  component: StyledText,
+  component: Text,
   parameters: {
     layout: 'centered',
   },
@@ -26,7 +26,7 @@ export const Primary: Story = {
   args: {
     label: 'Label',
     size: 'medium',
-    Bold: 'default',
+    bold: 'default',
     underline: false
   },
 };
